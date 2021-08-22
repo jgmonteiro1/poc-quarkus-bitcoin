@@ -1,15 +1,15 @@
 package com.jgmonteiro.entities;
 
-import com.jgmonteiro.entities.dto.Trades;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Histórico de negociações realizadas.
  */
 @Data
 public class Trade {
-    private List<Trades> trades = new ArrayList<>();
+    private Double date;
+    private Double price;
+    private Integer tid;
+    private String type;
 }
