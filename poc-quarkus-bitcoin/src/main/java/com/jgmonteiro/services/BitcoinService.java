@@ -1,5 +1,6 @@
 package com.jgmonteiro.services;
 
+import com.jgmonteiro.entities.DaySummary;
 import com.jgmonteiro.entities.Trade;
 import com.jgmonteiro.entities.dto.TickerDTO;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
@@ -24,5 +25,10 @@ public interface BitcoinService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{coin}/trades")
     List<Trade> getTrades(@PathParam("coin") final String coin);
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{coin}/day-summary/{year}/{month}/{day}")
+    DaySummary getDaySummary(@PathParam("coin") final String coin, @PathParam("year") final String year, @PathParam("month") final String month, @PathParam("day") final String day);
 
 }
